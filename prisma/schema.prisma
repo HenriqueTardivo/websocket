@@ -1,0 +1,23 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "sqlite"
+    url      = "file:./dev.db"
+}
+
+model AtualizacaoMesa {
+    id_atualizacao_mesa Int      @id @default(autoincrement())
+    id_mesa             Int
+    cor                 String
+    texto               String
+    atualizadaEm        DateTime @default(now())
+
+    @@index([id_mesa])
+}
+
+model Mesa {
+    id_mesa  Int      @id @default(autoincrement())
+    criadaEm DateTime @default(now())
+}
