@@ -19,5 +19,6 @@ model AtualizacaoMesa {
 
 model Mesa {
     id_mesa  Int      @id @default(autoincrement())
+    nome     String
     criadaEm DateTime @default(now())
 }
