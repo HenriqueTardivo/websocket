@@ -1,4 +1,3 @@
-import { Transform } from "class-transformer";
 import {
   IsDefined,
   IsIn,
@@ -7,7 +6,6 @@ import {
   IsNumber,
   MaxLength,
   Min,
-  IsDate,
 } from "class-validator";
 
 const avaliableColors = ["red", "green", "blue", "black", "white", "pink"];
@@ -27,8 +25,4 @@ export class AtualizaMesaDto {
   @IsNotEmpty()
   @MaxLength(180, { message: "Mensagens de até 180 caracteres!" })
   texto: string;
-
-  @Transform(({ value }) => new Date(value))
-  @IsDate()
-  atualizadaEm: Date;
 }
